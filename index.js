@@ -1,7 +1,13 @@
 const express = require('express');
-const app = exrpess();
+const app = express();
+const path = require('path');
+const uuid = require('uuid/v4');
 const logger = require('morgan');
+const users = require('./Model/Users')
 const port = process.env.PORT || 3000;
+const userRoutes = require('./routes/userRoutes');
+
+
 
 app.use(logger('dev'));
 app.use(express.json());

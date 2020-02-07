@@ -16,5 +16,18 @@ module.exports = {
         } else {
             return res.status(400).json({message: `User with id: ${req.params.id} does not exist` })
         }
+    }, 
+
+    createUser: (req, res) => {
+        if(!req.body.name || !req.body.email) {
+            return res.status(400).json( {message: 'Please enter both a name and an email'})
+        }
+        const newUser = {};
+        newUser.id = uuid();
+        newUser.name = req.body.name;
+        newUser.email = req.body.email;
+        users.push(newUser);
+        console.log(newUser)
+        return res.json(req.body);
     }
 }

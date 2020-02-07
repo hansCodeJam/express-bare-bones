@@ -1,13 +1,13 @@
-const user = require('../Model/Users');
+const users = require('../Model/Users');
 const uuid = require('uuid/v4');
 
 module.exports = {
     getAllUsers: (req, res) => {
-        res.json(user)
-    }, 
+        res.json(users)
+    },
 
     getSingleUser: (req, res) => {
-        const userExists = user.filter(user => user.id === req.params.id);
+        const userExists = users.filter(user => user.id === req.params.id);
         const user = userExists[0];
 
         if(userExists.length !== 0) {

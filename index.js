@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const path = require('path');
-const uuid = require('uuid/v4');
+//const path = require('path');
+//const uuid = require('uuid/v4');
 const logger = require('morgan');
-const users = require('./Model/Users')
-const port = process.env.PORT || 3000;
+//const users = require('./Model/Users')
+const port = process.env.PORT || 8000;
 const userRoutes = require('./routes/userRoutes');
 
 
